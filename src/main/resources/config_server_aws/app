@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name ec2-54-89-47-214.compute-1.amazonaws.com www.ec2-54-89-47-214.compute-1.amazonaws.com;
+
+    location / {
+      proxy_pass http://localhost:8080;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+
+   }
+
+}
